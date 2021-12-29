@@ -36,14 +36,14 @@ public class ScanChunk implements TabExecutor {
                     getAmount(chunk, player);
 
                 } else {
-                    player.sendMessage("You don't have permission to use this command (perm mode: sfchunkinfo.scan)");
+                    player.sendMessage("你没有权限使用该指令");
                 }
             } else {
                 if (player.hasPermission("sfchunkinfo.scan.others")) {
                     Player target = Bukkit.getPlayer(args[0]);
 
                     if(target == null){
-                        player.sendMessage("Player cannot be null or offline");
+                        player.sendMessage("目标不在线或不存在");
                         return true;
                     }
 
@@ -52,7 +52,7 @@ public class ScanChunk implements TabExecutor {
                     getAmountOthers(chunk, target, player);
 
                 } else {
-                    player.sendMessage("You don't have permission to use this command (perm mode: sfchunkinfo.scan.others)");
+                    player.sendMessage("你没有权限使用该指令");
                 }
             }
         }
@@ -66,7 +66,7 @@ public class ScanChunk implements TabExecutor {
                 player.getLocation(),
                 Interaction.PLACE_BLOCK)
         ) {
-            player.sendMessage("You don't have the permission to scan this chunk (Grief Protected), ask for permission or override using the protection plugin command");
+            player.sendMessage("你没有扫描该区块的权限，该区块受到保护");
             return;
         }
 
@@ -85,10 +85,10 @@ public class ScanChunk implements TabExecutor {
             }
         }
 
-        player.sendMessage(ChatColor.GOLD + "# of Slimefun items on this chunk:", "");
+        player.sendMessage(ChatColor.GOLD + "该区块中有以下 Slimefun 方块:", "");
 
         if (AMOUNT.isEmpty()) {
-            player.sendMessage(ChatColor.YELLOW + "No Slimefun items on this chunk");
+            player.sendMessage(ChatColor.YELLOW + "该区块中没有 Slimefun 方块");
             return;
         }
 
@@ -121,10 +121,10 @@ public class ScanChunk implements TabExecutor {
             }
         }
 
-        sender.sendMessage(ChatColor.GOLD + "# of Slimefun items on " + ChatColor.WHITE + player.getName() + ChatColor.GOLD + " chunk:", "");
+        sender.sendMessage(ChatColor.GOLD + "" + ChatColor.WHITE + player.getName() + ChatColor.GOLD + "所在区块有以下 Slimefun 方块:", "");
 
         if (AMOUNT.isEmpty()) {
-            sender.sendMessage(ChatColor.YELLOW + "No Slimefun items on " + ChatColor.WHITE + player.getName() + ChatColor.GOLD + " chunk");
+            sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.WHITE + player.getName() + ChatColor.GOLD + "所在区块没有 Slimefun 方块");
             return;
         }
 
@@ -142,19 +142,19 @@ public class ScanChunk implements TabExecutor {
     }
 
     public TextComponent hoverInfo(Map<String, String> info){
-        TextComponent infoAddon = new TextComponent( "\nHover for some info" );
+        TextComponent infoAddon = new TextComponent( "\n鼠标移至此处查看更多信息" );
         infoAddon.setColor(net.md_5.bungee.api.ChatColor.WHITE);
         infoAddon.setItalic(true);
-        infoAddon.setHoverEvent(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new Text(info.toString().replace("{","").replace("}","").replace(", ", "\n").replace("=", ChatColor.WHITE + " | from: "))));
+        infoAddon.setHoverEvent(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new Text(info.toString().replace("{","").replace("}","").replace(", ", "\n").replace("=", ChatColor.WHITE + " | 来自: "))));
 
         return infoAddon;
     }
 
     public TextComponent hoverInfoTimings(Map<String, Double> timings){
-        TextComponent infoChunk = new TextComponent( "Hover for block total timings" );
+        TextComponent infoChunk = new TextComponent( "鼠标移至此处查看timings" );
         infoChunk.setColor(net.md_5.bungee.api.ChatColor.WHITE);
         infoChunk.setItalic(true);
-        infoChunk.setHoverEvent(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new Text(ChatColor.GOLD + "Total Timings" + "\n\n" + timings.toString().replace("{","").replace("}","").replace(", ", " ms\n").replace("=", ChatColor.WHITE + ": ").concat(ChatColor.WHITE + " ms"))));
+        infoChunk.setHoverEvent(new HoverEvent( HoverEvent.Action.SHOW_TEXT, new Text(ChatColor.GOLD + "timing" + "\n\n" + timings.toString().replace("{","").replace("}","").replace(", ", " ms\n").replace("=", ChatColor.WHITE + ": ").concat(ChatColor.WHITE + " ms"))));
 
         return infoChunk;
     }
