@@ -1,7 +1,6 @@
 package me.fnfal113.sfchunkinfo;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import me.fnfal113.sfchunkinfo.commands.ScanChunk;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -21,6 +20,7 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
         getLogger().info("*                SfChunkInfo                 *");
         getLogger().info("*        作者: FN_FAL113 汉化: ybw0014         *");
         getLogger().info("*             Slimefun 附属插件                *");
+        getLogger().info("*         扫描区块中的Slimefun方块数量           *");
         getLogger().info("**********************************************");
 
 
@@ -28,6 +28,10 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+
+        if (getConfig().getBoolean("auto-update", true) && getDescription().getVersion().startsWith("Build ")) {
+            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfChunkInfo", "main", false).start();
+        }
 
     }
 
