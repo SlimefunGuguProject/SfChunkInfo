@@ -1,5 +1,9 @@
 version: "1"
 rules:
-  - base: master
-    upstream: FN-FAL113:master
+  - base: main
+    upstream: FN-FAL113:main
     mergeMethod: merge
+    assignees:
+      - ybw0014
+    conflictReviewers:
+      - ybw0014

@@ -2,6 +2,7 @@ package me.fnfal113.sfchunkinfo;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.fnfal113.sfchunkinfo.commands.ScanChunk;
+import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
