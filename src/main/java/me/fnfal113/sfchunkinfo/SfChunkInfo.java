@@ -31,7 +31,7 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
         saveDefaultConfig();
 
         if (getConfig().getBoolean("auto-update", true) && getDescription().getVersion().startsWith("Build ")) {
-            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfChunkInfo", "main", false).start();
+            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfChunkInfo-CN", "main", false).start();
         }
 
     }
