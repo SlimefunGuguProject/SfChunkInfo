@@ -4,7 +4,9 @@ main: me.fnfal113.sfchunkinfo.SfChunkInfo
 api-version: 1.14
 authors: [ FN_FAL113 ]
 description: Scan the amount of Slimefun blocks in a chunk
-depend: [Slimefun]
+depend:
+  - Slimefun
+  - GuizhanLibPlugin
 commands:
   sfchunkinfo:
     description: Scan chunk for amount of slimefun machines

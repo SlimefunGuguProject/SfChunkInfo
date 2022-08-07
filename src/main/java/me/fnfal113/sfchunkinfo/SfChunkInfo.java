@@ -2,7 +2,7 @@ package me.fnfal113.sfchunkinfo;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.fnfal113.sfchunkinfo.commands.ScanChunk;
-import net.guizhanss.guizhanlib.updater.GuizhanBuildsUpdater;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,7 +31,7 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
         saveDefaultConfig();
 
         if (getConfig().getBoolean("auto-update", true) && getDescription().getVersion().startsWith("Build ")) {
-            new GuizhanBuildsUpdater(this, getFile(), "ybw0014", "SfChunkInfo-CN", "main", false).start();
+            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "ybw0014", "SfChunkInfo-CN", "main", false);
         }
 
     }
@@ -43,7 +43,7 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/ybw0014/SfChunkInfo/issues";
+        return "https://github.com/SlimefunGuguProject/SfChunkInfo/issues";
     }
 
     private static void setInstance(SfChunkInfo ins) {
