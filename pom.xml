@@ -6,7 +6,7 @@
 
     <groupId>me.fnfal113</groupId>
     <artifactId>SfChunkInfo</artifactId>
-    <version>Unoffical-1.4</version>
+    <version>Unoffical-1.5.0</version>
     <packaging>jar</packaging>
 
     <name>SfChunkInfo</name>
