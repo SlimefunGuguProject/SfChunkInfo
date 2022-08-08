@@ -64,17 +64,12 @@
                             <pattern>org.bstats</pattern>
                             <shadedPattern>me.fnfal113.sfchunkinfo.bstats</shadedPattern>
                         </relocation>
-                        <relocation>
-                            <pattern>net.guizhanss.guizhanlib</pattern>
-                            <shadedPattern>me.fnfal113.sfchunkinfo.guizhanlib</shadedPattern>
-                        </relocation>
                     </relocations>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
                             <excludes>
                                 <exclude>META-INF/*</exclude>
-                                <exclude>minecraft.*</exclude>
                             </excludes>
                         </filter>
                     </filters>
