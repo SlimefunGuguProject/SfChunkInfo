@@ -1,6 +1,6 @@
 # SfChunkInfo - 区块信息
 
-一个简易的区块扫描插件，可以获取区块中所有 Slimefun 方块的数量
+一个简易的区块扫描插件，可以获取区块中所有 Slimefun 方块的数量，以及电力消耗等信息。
 
 支持 Slimefun 附属以及保护插件(Towny, GriefPrevention 等)
 
