@@ -12,6 +12,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -103,17 +104,21 @@ public class ScanChunk implements TabExecutor {
         for(int y = chunk.getWorld().getMinHeight(); y <= chunk.getWorld().getMaxHeight() - 1; y++) {
             for(int x = 0; x <= 15; x++) {
                 for(int z = 0; z <= 15; z++) {
-                    Block sfBlock = chunk.getBlock(x, y, z);
+                    Block block = chunk.getBlock(x, y, z);
 
-                    if(BlockStorage.check(sfBlock) != null) {
-                        SlimefunItem sfItem = BlockStorage.check(sfBlock);
+                    if(block.getType() == Material.AIR){
+                        continue;
+                    }
+
+                    if(BlockStorage.check(block) != null) {
+                        SlimefunItem sfItem = BlockStorage.check(block);
                         String sfBlockName = Objects.requireNonNull(sfItem).getItemName();
 
-                        getPowerUsage(sfItem, sfBlock.getLocation());
+                        getPowerUsage(sfItem, block.getLocation());
 
                         TIMINGS.put(sfBlockName, TIMINGS.getOrDefault(sfBlockName, (double) 0)
-                                + Double.parseDouble(Slimefun.getProfiler().getTime(sfBlock).substring(0, Slimefun.getProfiler().getTime(sfBlock).length() - 2)));
-                        INFO.put(sfBlockName, Objects.requireNonNull(BlockStorage.check(sfBlock)).getAddon().getName());
+                                + Double.parseDouble(Slimefun.getProfiler().getTime(block).substring(0, Slimefun.getProfiler().getTime(block).length() - 2)));
+                        INFO.put(sfBlockName, Objects.requireNonNull(BlockStorage.check(block)).getAddon().getName());
                         AMOUNT.put(sfBlockName,  AMOUNT.getOrDefault(sfBlockName, 0) + 1);
                     }
                 }
