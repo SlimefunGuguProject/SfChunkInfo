@@ -7,6 +7,7 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
+import java.util.logging.Level;
 
 public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
 
@@ -15,6 +16,14 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         setInstance(this);
+
+        if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         new Metrics(this, 13713);
 
         getLogger().info("**********************************************");

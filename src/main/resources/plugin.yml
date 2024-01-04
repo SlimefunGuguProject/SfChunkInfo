@@ -6,6 +6,7 @@ authors: [ FN_FAL113 ]
 description: Scan the amount of Slimefun blocks in a chunk
 depend:
   - Slimefun
+softdepend:
   - GuizhanLibPlugin
 commands:
   sfchunkinfo:
