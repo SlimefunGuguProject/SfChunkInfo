@@ -6,7 +6,7 @@
 
     <groupId>me.fnfal113</groupId>
     <artifactId>SfChunkInfo</artifactId>
-    <version>Unoffical-1.5.0</version>
+    <version>Unoffical-1.6.0</version>
     <packaging>jar</packaging>
 
     <name>SfChunkInfo</name>
@@ -16,6 +16,8 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <url>https://github.com/FN-FAL113/SfChunkInfo</url>
 
     <build>
         <finalName>${project.name} v${project.version}</finalName>
@@ -45,7 +47,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.5.1</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -63,6 +65,16 @@
                         <relocation>
                             <pattern>org.bstats</pattern>
                             <shadedPattern>me.fnfal113.sfchunkinfo.bstats</shadedPattern>
+                        </relocation>
+
+                        <relocation>
+                            <pattern>io.github.bakedlibs.dough.updater</pattern>
+                            <shadedPattern>me.fnfal113.sfchunkinfo.dough.updater</shadedPattern>
+                        </relocation>
+                        <!-- a transitive dependency, necessary for dough-updater -->
+                        <relocation>
+                            <pattern>io.github.bakedlibs.dough.versions</pattern>
+                            <shadedPattern>me.fnfal113.sfchunkinfo.dough.versions</shadedPattern>
                         </relocation>
                     </relocations>
                     <filters>
@@ -84,10 +96,12 @@
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+
         <repository>
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+
         <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
@@ -119,7 +133,7 @@
         <dependency>
             <groupId>net.guizhanss</groupId>
             <artifactId>GuizhanLibPlugin</artifactId>
-            <version>1.1.1</version>
+            <version>1.6.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -2,7 +2,7 @@ package me.fnfal113.sfchunkinfo;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.fnfal113.sfchunkinfo.commands.ScanChunk;
-import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -31,9 +31,8 @@ public final class SfChunkInfo extends JavaPlugin implements SlimefunAddon {
         saveDefaultConfig();
 
         if (getConfig().getBoolean("auto-update", true) && getDescription().getVersion().startsWith("Build ")) {
-            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "ybw0014", "SfChunkInfo-CN", "main", false);
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "SfChunkInfo", "main");
         }
-
     }
 
     @Override
