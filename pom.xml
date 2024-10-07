@@ -6,7 +6,7 @@
 
     <groupId>me.fnfal113</groupId>
     <artifactId>SfChunkInfo</artifactId>
-    <version>Unoffical-1.6.0</version>
+    <version>Unoffical-1.6.1</version>
     <packaging>jar</packaging>
 
     <name>SfChunkInfo</name>
@@ -133,7 +133,7 @@
         <dependency>
             <groupId>net.guizhanss</groupId>
             <artifactId>GuizhanLibPlugin</artifactId>
-            <version>1.6.1</version>
+            <version>2.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

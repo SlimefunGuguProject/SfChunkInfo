@@ -12,16 +12,7 @@
 
 ## 下载
 
-点击这里下载 SfChunkInfo: [下载 SfChunkInfo](https://builds.guizhanss.net/ybw0014/SfChunkInfo-CN/master)
-
-<p align="center">
-  <a href="https://github.com/ybw0014/SfChunkInfo-CN/actions/workflows/maven.yml">
-    <img src="https://github.com/ybw0014/SfChunkInfo-CN/actions/workflows/maven.yml/badge.svg" alt="Java CI"/>
-  </a>
-  <a href="https://builds.guizhanss.net/ybw0014/SfChunkInfo-CN/main">
-    <img src="https://builds.guizhanss.net/f/ybw0014/SfChunkInfo-CN/main/badge.svg" alt="Build status"/>
-  </a>
-</p>
+[![Build Status](https://builds.guizhanss.com/SlimefunGuguProject/SfChunkInfo/master/badge.svg)](https://builds.guizhanss.com/SlimefunGuguProject/SfChunkInfo/master)
 
 
 ## 扫描当前区块信息
