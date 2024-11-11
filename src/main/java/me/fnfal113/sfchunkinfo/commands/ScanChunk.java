@@ -174,7 +174,7 @@ public class ScanChunk implements TabExecutor {
     public TextComponent hoverInfoTimings(Map<String, Double> timings){
         Map<String, Double> sortedTimings = new LinkedHashMap<>();
         if(!timings.isEmpty()) {
-            timings.entrySet().stream().sorted(Map.Entry.<String, Double>comparingByValue(Double::compare).reversed()).forEach(e -> sortedTimings.put(e.getKey(), e.getValue()));
+            timings.entrySet().stream().sorted(Map.Entry.<String, Double>comparingByValue(Double::compare)).forEach(e -> sortedTimings.put(e.getKey(), e.getValue()));
         }
 
         TextComponent infoChunk = new TextComponent("鼠标移至此处查看timings");
