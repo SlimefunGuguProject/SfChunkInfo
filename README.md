@@ -12,8 +12,7 @@
 
 ## 下载
 
-[![Build Status](https://builds.guizhanss.com/SlimefunGuguProject/SfChunkInfo/master/badge.svg)](https://builds.guizhanss.com/SlimefunGuguProject/SfChunkInfo/master)
-
+[下载 SfChunkInfo](https://resources.guizhanss.com/plugin/SfChunkInfo)
 
 ## 扫描当前区块信息
 
